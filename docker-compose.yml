@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  spring-boot:
+    build: 
+      context: ./
+      dockerfile: ./Dockerfile
+    ports:
+      - 9095:8080
+    networks:
+      - spring-cloud-network
+    restart: always
+
+networks:
+    spring-cloud-network:
+        driver: bridge
